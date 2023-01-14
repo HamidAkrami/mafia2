@@ -14,6 +14,7 @@ class SvgBtnWidget extends StatelessWidget {
   String? svgAsset;
   double? iconSize;
   double? borderRadius;
+  double? padding;
   Function()? onPress;
   SvgBtnWidget(
       {Key? key,
@@ -25,6 +26,7 @@ class SvgBtnWidget extends StatelessWidget {
       this.svgAsset,
       this.iconSize = 35,
       this.borderRadius = 5,
+      this.padding = 0,
       this.onPress})
       : super(key: key);
 
@@ -37,6 +39,7 @@ class SvgBtnWidget extends StatelessWidget {
         }
       },
       child: Container(
+        padding: EdgeInsets.all(padding!),
         height: heightSize,
         width: widthSize,
         decoration: BoxDecoration(

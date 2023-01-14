@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mafia2/app/core/utils/size.dart';
 import 'package:mafia2/app/core/value/colors.dart';
-import 'package:mafia2/app/modules/pages/home/game_page/game_main/components/body/components/game_player_card_components/cheek_box.dart';
-import 'package:mafia2/app/modules/pages/home/game_page/game_main/components/body/components/game_player_card_components/name_and_status.dart';
+import 'package:mafia2/app/modules/controller/home_controller.dart';
+import 'package:mafia2/app/modules/pages/home/game_page/game_main/components/body/day/components/day_game_player_card_components/cheek_box.dart';
+import 'package:mafia2/app/modules/pages/home/game_page/game_main/components/body/day/components/day_game_player_card_components/name_and_status.dart';
+import 'package:mafia2/app/modules/pages/home/game_page/game_main/components/body/day/components/day_game_player_card_components/role.dart';
 
-import '../../../../../../../controller/home_controller.dart';
-import '../../../../../../widgets/btn_widgets.dart';
-import 'game_player_card_components/role.dart';
-
-class GamePlayerCard extends StatelessWidget {
-  const GamePlayerCard({
+class DayGamePlayerCard extends StatelessWidget {
+  const DayGamePlayerCard({
     Key? key,
   }) : super(key: key);
 
@@ -27,7 +24,7 @@ class GamePlayerCard extends StatelessWidget {
                 },
                 children: [
                   ...controller.gameList.map((e) {
-                    return InkWell(
+                    return GestureDetector(
                       key: ValueKey(e),
                       child: Container(
                         margin: EdgeInsets.symmetric(vertical: 2),

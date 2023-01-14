@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mafia2/app/core/utils/size.dart';
 import 'package:mafia2/app/core/value/colors.dart';
 import 'package:mafia2/app/data/models/game_model.dart';
-
-import '../../../../../../../widgets/btn_widgets.dart';
+import 'package:mafia2/app/modules/pages/widgets/btn_widgets.dart';
 
 class Role extends StatelessWidget {
   Role({Key? key, this.e}) : super(key: key);

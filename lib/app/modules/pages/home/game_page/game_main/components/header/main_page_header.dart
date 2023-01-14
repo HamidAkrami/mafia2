@@ -8,6 +8,7 @@ import 'package:mafia2/app/modules/controller/home_controller.dart';
 
 import '../../../../../../../core/value/icon_constants.dart';
 import '../../../../../widgets/svg_btn_widget.dart';
+import 'components/day_header.dart';
 
 class MainPageHeader extends StatelessWidget {
   MainPageHeader({
@@ -18,38 +19,42 @@ class MainPageHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height * 0.08,
-      decoration: BoxDecoration(color: white.withOpacity(0.1)),
-      child: Row(
-        children: [
-          const SizedBox(
-            width: 15,
-          ),
-          SvgBtnWidget(
-            onPress: () {},
-            svgAsset: IconConstants.speaking,
-            heightSize: Get.height * 0.035,
-          ),
-          Expanded(child: Container()),
-          Obx(
-            () => SvgBtnWidget(
-              onPress: () {
-                homeCtrl.changeShowRoleValue();
-              },
-              svgAsset: homeCtrl.showRole.value
-                  ? IconConstants.show
-                  : IconConstants.hide,
-              heightSize: homeCtrl.showRole.value
-                  ? Get.height * 0.03
-                  : Get.height * 0.037,
-            ),
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-        ],
-      ),
+    return Obx(
+      () => Container(
+          height: Get.height * 0.08,
+          decoration: BoxDecoration(color: white.withOpacity(0.1)),
+          child: homeCtrl.gameTime.value == 0
+              ? DayHeader()
+              : homeCtrl.gameTime.value == 1
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "head6".tr,
+                          style: TextStyle(
+                              color: white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: getSize(20)),
+                        )
+                      ],
+                    )
+                  : Row(
+                      children: [
+                        Expanded(child: Container()),
+                        Expanded(child: Container()),
+                        Expanded(
+                            child: GestureDetector(
+                          child: Container(
+                            alignment: Alignment.centerRight,
+                            padding: const EdgeInsets.only(right: 10),
+                            child: SvgBtnWidget(
+                              heightSize: Get.height * 0.03,
+                              svgAsset: IconConstants.nightmusic,
+                            ),
+                          ),
+                        )),
+                      ],
+                    )),
     );
   }
 }

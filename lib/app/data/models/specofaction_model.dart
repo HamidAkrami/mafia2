@@ -3,13 +3,10 @@ import 'package:flutter/cupertino.dart';
 class Specification {
   Color? color;
   String? title;
-  Specification(this.title, this.color);
+  bool? isActive;
+  Specification({this.title, this.color, this.isActive});
   factory Specification.fromJson(Map<String, dynamic> json) => Specification(
-        json["color"],
-        json["title"],
-      );
-  Map<String, dynamic> toJson() => {
-        "color": color,
-        "title": title,
-      };
+      color: json["color"], title: json["title"], isActive: json["isActive"]);
+  Map<String, dynamic> toJson() =>
+      {"color": color, "title": title, "isActive": isActive};
 }

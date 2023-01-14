@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:mafia2/app/core/value/colors.dart';
 import 'package:mafia2/app/data/models/game_model.dart';
 import 'package:mafia2/app/modules/controller/home_controller.dart';
+import 'package:mafia2/app/modules/routes/app_routes.dart';
 
 import '../../../../widgets/icon_btn_widget.dart';
 import 'divided_role_dialog.dart';

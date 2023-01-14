@@ -18,16 +18,6 @@ class SelectedPlayersBar extends StatelessWidget {
   }) : super(key: key);
 
   final HomeController homeCtrl;
-  resetRolePage() {
-    homeCtrl.selectedRoles.clear();
-    for (var i = 0; i < homeCtrl.roleList.length; i++) {
-      homeCtrl.roleList[i].isPicked = false;
-    }
-    homeCtrl.citizenPickedCounter.value = 0;
-    homeCtrl.mafiaPickedCounter.value = 0;
-    homeCtrl.independentPickedCounter.value = 0;
-    homeCtrl.selectedRoleLength.value = 0;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +69,7 @@ class SelectedPlayersBar extends StatelessWidget {
           IconBtnWidget(
             onPress: () {
               homeCtrl.addtoPlayerNameList();
-              resetRolePage();
+              homeCtrl.resetRolePage();
 
               Get.toNamed(AppRoutes.rolePage);
             },

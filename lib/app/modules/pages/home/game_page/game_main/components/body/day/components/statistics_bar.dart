@@ -13,37 +13,39 @@ class StatisticsBar extends StatelessWidget {
   final homeCtrl = Get.find<HomeController>();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height * 0.06,
-      decoration: BoxDecoration(
-          color: white.withOpacity(0.1),
-          border: Border.symmetric(
-              horizontal:
-                  BorderSide(color: grey.withOpacity(0.8), width: 0.7))),
-      child: Obx(
-        () => Row(
-          children: [
-            Expanded(
-                child: NumberOfSide(
-              side: 0,
-              all: homeCtrl.citizenPickedCounter.value,
-              amount: homeCtrl.aliveCitizenIndex.value,
-            )),
-            Expanded(
-                child: NumberOfSide(
-              side: 2,
-              all: homeCtrl.independentPickedCounter.value,
-              amount: homeCtrl.aliveindependentIndex.value,
-            )),
-            Expanded(
-                child: NumberOfSide(
-              side: 1,
-              all: homeCtrl.mafiaPickedCounter.value,
-              amount: homeCtrl.aliveMafiaIndex.value,
-            ))
-          ],
-        ),
-      ),
+    return Obx(
+      () => homeCtrl.showRole.value
+          ? Container(
+              height: Get.height * 0.06,
+              decoration: BoxDecoration(
+                  color: white.withOpacity(0.1),
+                  border: Border.symmetric(
+                      horizontal: BorderSide(
+                          color: grey.withOpacity(0.8), width: 0.7))),
+              child: Row(
+                children: [
+                  Expanded(
+                      child: NumberOfSide(
+                    side: 0,
+                    all: homeCtrl.citizenPickedCounter.value,
+                    amount: homeCtrl.aliveCitizenIndex.value,
+                  )),
+                  Expanded(
+                      child: NumberOfSide(
+                    side: 2,
+                    all: homeCtrl.independentPickedCounter.value,
+                    amount: homeCtrl.aliveindependentIndex.value,
+                  )),
+                  Expanded(
+                      child: NumberOfSide(
+                    side: 1,
+                    all: homeCtrl.mafiaPickedCounter.value,
+                    amount: homeCtrl.aliveMafiaIndex.value,
+                  ))
+                ],
+              ),
+            )
+          : Container(),
     );
   }
 }

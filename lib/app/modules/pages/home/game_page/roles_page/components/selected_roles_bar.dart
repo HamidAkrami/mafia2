@@ -57,6 +57,7 @@ class SelectedRolesBar extends StatelessWidget {
           IconBtnWidget(
             onPress: () {
               cheekSelectedRoles(context);
+              homeCtrl.addtoFinalNameList();
             },
             widthSize: Get.width * 0.15,
             heightSize: Get.height * 0.06,

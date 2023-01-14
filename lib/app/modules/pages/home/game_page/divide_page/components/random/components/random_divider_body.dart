@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,7 +22,7 @@ class RandomDividerBody extends StatelessWidget {
       child: Wrap(
         alignment: WrapAlignment.center,
         children: [
-          ...homeCtrl.playerNameList.map((element) => GestureDetector(
+          ...homeCtrl.finalNameList.map((element) => GestureDetector(
                 onTap: () {
                   homeCtrl.addToGameList(element);
                   randomDividerDialog(context, homeCtrl.gameList.last);
@@ -53,11 +55,14 @@ class RandomDividerBody extends StatelessWidget {
         width: Get.width,
         animType: AnimType.scale,
         dialogBackgroundColor: const Color(0xff191919),
-        body: GestureDetector(
-          onTap: () {
-            Get.back();
-          },
-          child: DividedRoleDIalog(player: player),
+        body: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: DividedRoleDIalog(player: player),
+          ),
         )).show();
   }
 }

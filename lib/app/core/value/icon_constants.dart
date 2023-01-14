@@ -1,5 +1,7 @@
 class IconConstants {
   static String day = "assets/icons/day.svg";
+  static String notDay = "assets/icons/notday.svg";
+  static String alarm = "assets/icons/alarm.svg";
   static String dislike = "assets/icons/dislike.svg";
   static String dontshow = "assets/icons/dontshow.svg";
   static String drygun = "assets/icons/drygun.svg";

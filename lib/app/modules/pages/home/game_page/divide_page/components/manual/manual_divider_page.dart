@@ -23,7 +23,7 @@ class ManualDividerRole extends StatelessWidget {
     return GetBuilder<HomeController>(
         builder: (controller) => Container(
               alignment: Alignment.center,
-              child: controller.playerNameList.isNotEmpty
+              child: controller.finalNameList.isNotEmpty
                   ? ManualChooseRole(
                       controller: controller,
                     )

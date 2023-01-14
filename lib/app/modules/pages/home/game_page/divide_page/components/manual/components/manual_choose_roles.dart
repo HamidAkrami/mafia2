@@ -19,7 +19,7 @@ class ManualChooseRole extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        ...controller!.playerNameList.map((element) => Directionality(
+        ...controller!.finalNameList.map((element) => Directionality(
             textDirection: TextDirection.rtl,
             child: Container(
               height: Get.height * 0.06,

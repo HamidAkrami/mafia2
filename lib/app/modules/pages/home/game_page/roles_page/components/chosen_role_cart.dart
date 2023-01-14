@@ -13,7 +13,7 @@ class ChosenRoleCart extends StatelessWidget {
   ChosenRoleCart({
     this.role,
     Key? key,
-  }) : super(key: key);
+  });
   RoleModel? role;
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,10 @@ class ChosenRoleCart extends StatelessWidget {
             ? !role!.isPicked!
                 ? Text(
                     role!.role!,
-                    style: TextStyle(color: white, fontSize: getSize(14.0)),
+                    style: TextStyle(
+                        color: white,
+                        fontSize: getSize(14.0),
+                        fontWeight: FontWeight.bold),
                   )
                 : SImpleRole(role: role, homeCtrl: homeCtrl)
             : Text(

@@ -43,6 +43,7 @@ class EndDivideWIdget extends StatelessWidget {
               const SizedBox(
                 width: 25,
               ),
+              //refresh
               Expanded(
                 child: BtnWidget(
                   onPress: () => homeCtrl.refreshDivider(),
@@ -54,9 +55,13 @@ class EndDivideWIdget extends StatelessWidget {
               const SizedBox(
                 width: 15,
               ),
+              //go To Game
               Expanded(
                 child: BtnWidget(
-                  onPress: () => Get.toNamed(AppRoutes.gameMainPage),
+                  onPress: () {
+                    homeCtrl.gameList.shuffle();
+                    Get.toNamed(AppRoutes.gameMainPage);
+                  },
                   fontSize: getSize(16.0),
                   fillColor: greenDark,
                   title: "optn8".tr,

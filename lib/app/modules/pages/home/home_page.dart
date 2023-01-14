@@ -9,7 +9,7 @@ import 'package:mafia2/app/modules/pages/home/components/menu.dart';
 import 'package:mafia2/app/modules/pages/widgets/btn_widgets.dart';
 
 class HomePage extends GetView<HomeController> {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class HomePage extends GetView<HomeController> {
                   0.01,
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Menu(),
               )
             ],

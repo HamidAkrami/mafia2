@@ -24,6 +24,7 @@ class AppRoutes {
   static const String appLearning = "/appLearning";
   static const String divide = "/divide";
   static const String gameMainPage = "/gameMainPage";
+  static const String lastMovePage = "/lastMovePage";
 }
 
 class App {
@@ -91,6 +92,12 @@ class App {
     GetPage(
       transition: Transition.rightToLeft,
       name: AppRoutes.gameMainPage,
+      page: () => GameMain(),
+      binding: HomeBinding(),
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: AppRoutes.lastMovePage,
       page: () => GameMain(),
       binding: HomeBinding(),
     ),
